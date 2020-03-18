@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta charset="ISO-8859-1"/>
+		<title>Cadastro de título</title>
+		<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css/"/>
+		<link rel="stylesheet" type="text/css" href="/css/style.css/"/>
+	</head>
+	<body>
+		<nav class="navbar navbar-default">
+		  <div class="container-fluid">
+		    <div class="navbar-header">
+		      <!-- <a class="navbar-brand" href="#"> -->
+		        <img src="/img/logoGFT.png" alt="GFT">
+		      </a>
+		    </div>
+		  </div>
+		</nav>
+		
+		<form class="form-horizontal">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h1 class="panel-title">novo titulo</h1>
+				</div>
+				
+				<div class="panel-body">
+					<div class="form-group">
+						<label for="Descricao" class="col-sm-2 control-label">Descriao</label>
+						<div class="col-sm-4">
+							<input type="text" class="form-control" id="descricao"/>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="DataVencimento" class="col-sm-2 control-label">Data de Vencimento</label>
+						<div class="col-sm-2">
+							<input type="text" class="form-control" id="dataVencimento"/>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="Valor" class="col-sm-2 control-label">Valor</label>
+						<div class="col-sm-2">
+							<input type="text" class="form-control" id="Valor"/>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="Status" class="col-sm-2 control-label">Status</label>
+						<div class="col-sm-2">
+							<select class="form-control">
+								<option>Pendente</option>
+								<option>Recebido</option>								
+							</select>							
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-offset-2 col-sm-10">
+							<button type="submit" class="btn btn-info">Salvar</button>
+						</div>
+					</div>					
+				</div>
+			</div>
+		</form>	
+		
+		
+		<script src="/js/bootstrap.min.js"></script>
+	</body>
+</html>
