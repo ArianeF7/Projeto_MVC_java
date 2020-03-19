@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
 	<head>
 		<meta charset="ISO-8859-1"/>
 		<title>Cadastro de título</title>
@@ -17,7 +18,11 @@
 		  </div>
 		</nav>
 		
-		<form class="form-horizontal">
+		<form class="form-horizontal" method="POST" action="/titulos">
+		
+			<div class= "alert alert-success" th:if="${!#strings.isEmpty(mensagem)}">				
+				<span>Titulo salvo com sucesso</span>
+			</div>
 			<div class="panel panel-default">
 				<div class="panel-heading">
 					<h1 class="panel-title">novo titulo</h1>
@@ -25,29 +30,29 @@
 				
 				<div class="panel-body">
 					<div class="form-group">
-						<label for="Descricao" class="col-sm-2 control-label">Descriao</label>
+						<label for="Descricao" class="col-sm-2 control-label">Descricao</label>
 						<div class="col-sm-4">
-							<input type="text" class="form-control" id="descricao"/>
+							<input type="text" class="form-control" id="descricao" name="descricao"/>
 						</div>
 					</div>
 					<div class="form-group">
 						<label for="DataVencimento" class="col-sm-2 control-label">Data de Vencimento</label>
 						<div class="col-sm-2">
-							<input type="text" class="form-control" id="dataVencimento"/>
+							<input type="text" class="form-control" id="dataVencimento"name="dataVencimento"/>
 						</div>
 					</div>
 					<div class="form-group">
 						<label for="Valor" class="col-sm-2 control-label">Valor</label>
 						<div class="col-sm-2">
-							<input type="text" class="form-control" id="Valor"/>
+							<input type="text" class="form-control" id="Valor"name="valor"/>
 						</div>
 					</div>
 					<div class="form-group">
 						<label for="Status" class="col-sm-2 control-label">Status</label>
 						<div class="col-sm-2">
-							<select class="form-control">
-								<option>Pendente</option>
-								<option>Recebido</option>								
+							<select class="form-control" name="status">
+								<option value="PENDENTE">Pendente</option>
+								<option value="RECEBIDO">Recebido</option>								
 							</select>							
 						</div>
 					</div>
