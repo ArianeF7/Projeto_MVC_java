@@ -15,7 +15,8 @@ import javax.persistence.TemporalType;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.NumberFormat;
 
-@Entity
+
+@Entity (name = "titulos")
 public class Titulo {
 	
 	@Id
