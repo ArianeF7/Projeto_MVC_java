@@ -12,3 +12,13 @@
 	margin-left: 10px;
 	margin-right: 10px;	
 }
+
+.panel-title{
+	padding-top:4px;
+	padding-bottom:0px;
+}
+
+.aw-link-panel{
+	padding-top:2px;
+	padding-bottom:0px;
+}

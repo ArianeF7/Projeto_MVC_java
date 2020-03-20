@@ -1,70 +1,59 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:th="http://www.thymeleaf.org">
-	<head>
-		<meta charset="ISO-8859-1"/>
-		<title>Cadastro de título</title>
-		<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css/"/>
-		<link rel="stylesheet" type="text/css" href="/css/style.css/"/>
-	</head>
-	<body>
-		<nav class="navbar navbar-default">
-		  <div class="container-fluid">
-		    <div class="navbar-header">
-		      <!-- <a class="navbar-brand" href="#"> -->
-		        <img src="/img/logoGFT.png" alt="GFT">
-		      </a>
-		    </div>
-		  </div>
-		</nav>
-		
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{LayoutPadrao}">
+	<head>		
+		<title>Cadastro de tÃ­tulo</title>
+		<script src="content-script.js"></script>
+	</head>	
+	<section layout:fragment="conteudo">
+			
 		<form class="form-horizontal" method="POST" action="/titulos">
 		
 			<div class= "alert alert-success" th:if="${!#strings.isEmpty(mensagem)}">				
 				<span>Titulo salvo com sucesso</span>
 			</div>
 			<div class="panel panel-default">
-				<div class="panel-heading">
-					<h1 class="panel-title">novo titulo</h1>
-				</div>
-				
-				<div class="panel-body">
-					<div class="form-group">
-						<label for="Descricao" class="col-sm-2 control-label">Descricao</label>
-						<div class="col-sm-4">
-							<input type="text" class="form-control" id="descricao" name="descricao"/>
-						</div>
-					</div>
-					<div class="form-group">
-						<label for="DataVencimento" class="col-sm-2 control-label">Data de Vencimento</label>
-						<div class="col-sm-2">
-							<input type="text" class="form-control" id="dataVencimento"name="dataVencimento"/>
-						</div>
-					</div>
-					<div class="form-group">
-						<label for="Valor" class="col-sm-2 control-label">Valor</label>
-						<div class="col-sm-2">
-							<input type="text" class="form-control" id="Valor"name="valor"/>
-						</div>
-					</div>
-					<div class="form-group">
-						<label for="Status" class="col-sm-2 control-label">Status</label>
-						<div class="col-sm-2">
-							<select class="form-control" name="status">
-								<option th:each="status :${todosStatusitulo}" th:value="${status}" th:text="${status.descricao}"></option>								
-							</select>							
-						</div>
-					</div>
-					<div class="form-group">
-						<div class="col-sm-offset-2 col-sm-10">
-							<button type="submit" class="btn btn-info">Salvar</button>
-						</div>
-					</div>					
-				</div>
+				<div class="panel-heading clearfix">			
+					<h1 class="panel-title col-md-10">Novo Titulo</h1>
+					<a class="btn btn-link col-md-2  aw-link-panel" href="/titulos">Voltar para pesquisa</a>			
+				</div>					
 			</div>
+				
+			<div class="panel-body">
+				<div class="form-group">
+					<label for="Descricao" class="col-sm-2 control-label">Descricao</label>
+					<div class="col-sm-4">
+						<input type="text" class="form-control" id="descricao" name="descricao"/>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="DataVencimento" class="col-sm-2 control-label">Data de Vencimento</label>
+					<div class="col-sm-2">
+						<input type="text" class="form-control" id="dataVencimento"name="dataVencimento"/>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="Valor" class="col-sm-2 control-label">Valor</label>
+					<div class="col-sm-2">
+						<input type="text" class="form-control" id="Valor"name="valor"/>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="Status" class="col-sm-2 control-label">Status</label>
+					<div class="col-sm-2">
+						<select class="form-control" name="status">
+							<option th:each="status :${todosStatusitulo}" th:value="${status}" th:text="${status.descricao}"></option>								
+						</select>							
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-offset-2 col-sm-10">
+						<button type="submit" class="btn btn-info">Salvar</button>
+					</div>
+				</div>					
+			</div>		
 		</form>	
-		
-		
-		<script src="/js/bootstrap.min.js"></script>
-	</body>
+	</section>
 </html>
