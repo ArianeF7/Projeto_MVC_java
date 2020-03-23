@@ -1,6 +1,11 @@
 package com.gft.cobranca.model;
 
 import java.math.BigDecimal;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+import javax.validation.constraints.DecimalMax;
+import javax.validation.constraints.DecimalMin;
+import javax.validation.constraints.NotEmpty;
 import java.util.Date;
 
 import javax.persistence.Entity;
@@ -22,12 +27,19 @@ public class Titulo {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long codigo;
+	
+	@NotEmpty(message = "O campo descrição é de preenchimento obrigatório")
+	@Size(max = 60, message = "A descrição não pode conter mais de 60 caracteres") 
 	private String descricao;
 	
+	@NotNull(message = "Data de vencimento é obrigatória")	
 	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	@Temporal(TemporalType.DATE)
 	private Date dataVencimento;
 	
+	@NotNull(message = "O campo VALOR não pode ser vazio")
+	@DecimalMin(value = "0.01", message = "Valor não pode ser menor que 0,01")
+	@DecimalMax(value = "9999999.99", message = "Valor não pode ser maior que 9.999.999,99")
 	@NumberFormat(pattern = "#,##0.00")
 	private BigDecimal valor;
 	
@@ -63,6 +75,11 @@ public class Titulo {
 	public void setStatus(StatusTitulo status) {
 		this.status = status;
 	}
+	
+	public boolean isPendente() {
+		return StatusTitulo.PENDENTE.equals(this.status);
+	}
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
