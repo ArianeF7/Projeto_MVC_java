@@ -1,24 +1,31 @@
-.navbar-default{
-	background-color: black;
-	padding-top: 2px;
-}
+/*Tela do computador*/
 
-.panel-default{
+@media (min-width: 768px){
+
+	.alert{
+		margin-left: 10px;
+		margin-right: 10px;	
+	}
+	
+	.panel-default{
 	margin-left: 10px;
 	margin-right: 10px;
+	}
+	
 }
 
-.alert{
-	margin-left: 10px;
-	margin-right: 10px;	
-}
+	.navbar-default{
+		background-color: black;
+		padding-top: 2px;
+	}	
+	
+	.panel-title{
+		padding-top:4px;
+		padding-bottom:0px;
+	}
+		
+	.aw-link-panel{
+		padding-top:2px;
+		padding-bottom:0px;
+	}
 
-.panel-title{
-	padding-top:4px;
-	padding-bottom:0px;
-}
-
-.aw-link-panel{
-	padding-top:2px;
-	padding-bottom:0px;
-}

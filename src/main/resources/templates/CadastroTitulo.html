@@ -7,6 +7,7 @@
 		<title>Cadastro de título</title>
 		<script src="content-script.js"></script>
 	</head>	
+	
 	<section layout:fragment="conteudo">			
 		<form class="form-horizontal" method="POST" action="/titulos" th:object="${titulo}">		
 			<div layout:insert="MensagemGeral"></div>
@@ -17,7 +18,7 @@
 					<h1 class="panel-title col-md-10">Novo Titulo</h1>
 					<a class="btn btn-link col-md-2  aw-link-panel" href="/titulos">Voltar para pesquisa</a>			
 				</div>					
-			</div>			
+					
 			
 			<div class="panel-body">
 				<input type="hidden" th:field="*{codigo}"/>
@@ -59,6 +60,7 @@
 						<button type="submit" class="btn btn-info">Salvar</button>
 					</div>
 				</div>					
+			</div>	
 			</div>		
 		</form>	
 	</section>
